@@ -8,7 +8,7 @@ This is the official repository of [Cloud Assess](https://cloudassess.org).
 
 ## What is Cloud Assess?
 
-Cloud Assess is an open-source tool to automate the assessment of 
+Cloud Assess is an open-source tool to automate the assessment of
 the environmental impacts of cloud services.
 
 ![Cloud Assess](./assets/cloudassess.svg)
@@ -31,7 +31,7 @@ git checkout git@github.com:kleis-technology/cloud-assess.git
 cd cloud-assess
 ```
 All the commands in the sections below are to be run from the root of this repository.
-We assume that you will run these commands in bash. 
+We assume that you will run these commands in bash.
 If you are using another shell, please adapt the commands accordingly.
 
 
@@ -44,14 +44,14 @@ docker compose up -d
 
 The API specification is available in the folder `openapi`.
 For a more interactive visualisation of the API, the `docker-compose`
-also spins up a swagger ui instance. 
+also spins up a swagger ui instance.
 Visit this [page](http://localhost) to explore the endpoints, DTOs and run example queries.
 
 ### Local build and run
 
 #### Requirements
 
-To build the server, you will need 
+To build the server, you will need
 * Java 17 (temurin) environment
 * A [GitHub personal access token (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with the permission `read:packages` to download packages from GitHub Package Registry.
 
@@ -113,8 +113,15 @@ The request takes the following form:
   }
 }
 ```
-In this request, we specify the usage of our virtual machine in terms 
-of the quantity of RAM and storage used (in `GB * hour`). 
+
+You can run this against your local deployment with:
+
+```console
+./samples/request.sh
+```
+
+In this request, we specify the usage of our virtual machine in terms
+of the quantity of RAM and storage used (in `GB * hour`).
 The request also includes the so-called "internal workload":
 that represents the virtual machines that are necessary to operate the service
 but that are not directly associated with clients.
@@ -250,11 +257,11 @@ but nothing stops you from assessing as many virtual machines as you want.
 
 ### Trusted Library
 
-The ambition of Cloud Assess is to offer a library of *transparent*, 
+The ambition of Cloud Assess is to offer a library of *transparent*,
 *PCR-compliant* and *executable* LCA models in the sector of digital services.
 More precisely, this work builds on the existing [PCR](https://codde.fr/wp-content/uploads/2023/01/referentiel_rcp_datacenter_services_cloud.pdf)
 for data center and cloud services.
-The PCR defines 11 functional units, covering the hosting infrastructure (physical datacenter) up to 
+The PCR defines 11 functional units, covering the hosting infrastructure (physical datacenter) up to
 more abstract UFs, e.g., Software Services.
 Cloud Assess aims at covering the UFs at software level, but also UF that are not explicitly
 covered by the PCR
@@ -301,7 +308,7 @@ You can edit the models in `trusted_library` with any text editor.
 In particular, you can fill in appropriate values for the `background`, or
 modify the default parameter values of intermediate processes.
 
-You will soon recognize that the top processes, e.g. `virtual_machine`, 
+You will soon recognize that the top processes, e.g. `virtual_machine`,
 have parameters that are directly mapped to parameters in the server's API.
 Actually, the server's job can be decomposed as follows:
 * first, the server loads the models under the folder `trusted_library`
@@ -314,10 +321,10 @@ The content of this repository is subject to [Apache 2 license](./LICENSE-2.0.tx
 
 ## About us
 
-[Cloud Assess](https://cloudassess.org) is a joint-venture of [Resilio](https://resilio-solutions.com) 
-and [Kleis Technology](https://kleis.ch). 
+[Cloud Assess](https://cloudassess.org) is a joint-venture of [Resilio](https://resilio-solutions.com)
+and [Kleis Technology](https://kleis.ch).
 
-If you have any questions related to Cloud Assess, be it about the LCA methodology or ways to automate the assessments, 
+If you have any questions related to Cloud Assess, be it about the LCA methodology or ways to automate the assessments,
 feel free to reach out to us at `contact@resilio.tech`.
 
 <span>

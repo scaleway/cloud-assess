@@ -1,0 +1,29 @@
+{
+  "virtual_machines": [
+    {
+      "id": "c1",
+      "ram": {
+        "amount": 32.0,
+        "unit": "GB_hour"
+      },
+      "storage": {
+        "amount": 1024.0,
+        "unit": "GB_hour"
+      },
+      "meta": {
+        "region": "sofia",
+        "env": "production"
+      }
+    }
+  ],
+  "internal_workload": {
+    "ram": {
+      "amount": 10.0,
+      "unit": "GB_hour"
+    },
+    "storage": {
+      "amount": 50.0,
+      "unit": "GB_hour"
+    }
+  }
+}
